@@ -17,7 +17,7 @@ class UsersController < ApplicationController
       redirect_to root_url
     else
       render 'new'
-     end
+    end
   end
 
   def search
@@ -25,7 +25,7 @@ class UsersController < ApplicationController
       redirect_back_or root_url
     end
     foodcategories = Foodcategory.where(["name LIKE ?","%#{params[:search]}%"])
-    foodcategorylist = FoodCategoryList.includes(:restaurant).where(foodcategory: foodcategories)
+    foodcategorylist = FoodCategoryList.joins(:restaurant).where(foodcategory: foodcategories).select('distinct restaurants.*')
     @restaurants = JSON.parse foodcategorylist.to_json(:include => { :restaurant => { :only => [:id, :name] } })
   end
 
@@ -36,14 +36,18 @@ class UsersController < ApplicationController
   def details
     restaurant = Restaurant.where("id='#{params[:id]}'")
     foodlist = Foodlist.includes(:food, :foodcategory).where(restaurant: restaurant)
-    value = foodlist.to_json(:include=>{:food => {:only => [:id, :name]}, :foodcategory => {:only=>[:id, :name]}})
-    value = JSON.parse value
-    @restaurantdetails ={}
-    value.each do |item|
-      if @restaurantdetails[item["foodcategory"]["name"]].nil?
-        @restaurantdetails[item["foodcategory"]["name"]] = []
+    begin
+      value = foodlist.to_json(:include=>{:food => {:only => [:id, :name]}, :foodcategory => {:only=>[:id, :name]}})
+      value = JSON.parse value
+      @restaurantdetails ={}
+      value.each do |item|
+        if @restaurantdetails[item["foodcategory"]["name"]].nil?
+          @restaurantdetails[item["foodcategory"]["name"]] = []
+        end
+        @restaurantdetails[item["foodcategory"]["name"]] << item["food"].merge({"cost":item["foodcost"]})
       end
-      @restaurantdetails[item["foodcategory"]["name"]] << item["food"].merge({"cost":item["foodcost"]})
+    rescue
+      @restaurantdetails = {}
     end
   end
 
