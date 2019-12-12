@@ -40,7 +40,10 @@ class UsersController < ApplicationController
     value = JSON.parse value
     @restaurantdetails ={}
     value.each do |item|
-      @restaurantdetails[item["foodcategory"]["name"]] = [item["food"], {"cost":item["foodcost"]}]
+      if @restaurantdetails[item["foodcategory"]["name"]].nil?
+        @restaurantdetails[item["foodcategory"]["name"]] = []
+      end
+      @restaurantdetails[item["foodcategory"]["name"]] << item["food"].merge({"cost":item["foodcost"]})
     end
   end
 

@@ -1,13 +1,46 @@
 <%= render 'layouts/header' %>
-<div class="content_container">
-  <div class="row">
-    <% @restaurantdetails.each do |restaurant| %>
-      <div class="col-md-4">
-        <span class="restaurant_name"><%= restaurant %></span>
-        <br>
-        <br>
-      </div>
+<!--<div class="content_container">-->
+<!--  <div class="row">-->
+    <%# @restaurantdetails.each do |key, value| %>
+<!--      <div>-->
+<!--        <span><%#=key %></span>-->
+<!--      </div>-->
+<!--      <div>-->
+        <%#value.each do |item| %>
+<!--          <div class="col-md-4">-->
+<!--            <span><%#= item["name"] %></span>-->
+<!--            <span><%#= item[:cost] %></span>-->
+<!--            <br>-->
+<!--            <br>-->
+<!--          </div>-->
+        <%#end %>
+<!--      </div>-->
+    <%#end %>
+<!--  </div>-->
+<!--</div>-->
+<div>
+  <ul class="i2">
+    <% @restaurantdetails.each do |key, value| %>
+    <li>
+      <h2><%=key %></h2>
+      <ul>
+        <div class="row">
+        <%value.each do |item| %>
+          <div class="col-md-4">
+            <div class="i3">
+              <div>
+                <span><%= item["name"] %></span>
+              </div>
+              <div>
+                <span>$ <%= item[:cost] %></span>
+              </div>
+            </div>
+          </div>
+        <%end %>
+        </div>
+      </ul>
+    </li>
     <%end %>
-  </div>
+  </ul>
 </div>
 <%= render 'layouts/footer' %>
