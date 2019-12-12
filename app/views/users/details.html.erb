@@ -6,18 +6,20 @@
       <h2><%=key %></h2>
       <ul>
         <div class="row">
-        <%value.each do |item| %>
-          <div class="col-md-4">
-            <div class="i3">
-              <div>
-                <span><%= item["name"] %></span>
+          <div class="details_content">
+            <%value.each do |item| %>
+              <div class="col-md-4 details_content">
+                <div class="i3">
+                  <div>
+                    <span><%= item["name"] %></span>
+                  </div>
+                  <div>
+                    <span>$ <%= item[:cost] %></span>
+                  </div>
+                </div>
               </div>
-              <div>
-                <span>$ <%= item[:cost] %></span>
-              </div>
-            </div>
+            <%end %>
           </div>
-        <%end %>
         </div>
       </ul>
     </li>

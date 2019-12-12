@@ -13,7 +13,7 @@
   <div class="row">
     <% @restaurants.each do |restaurant| %>
       <div class="col-md-4">
-        <%= link_to image_tag("hotels/hotelimage.jpeg", width: '500px', height: '250px'),
+        <%= link_to image_tag("hotels/hotelimage.jpeg", width: '400px', height: '250px'),
                     url_for({:controller => 'users', :action => 'details', :id=>restaurant["id"]}) %>
         <span class="restaurant_name"><%= restaurant["name"] %></span>
         <br>
