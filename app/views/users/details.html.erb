@@ -1,0 +1,13 @@
+<%= render 'layouts/header' %>
+<div class="content_container">
+  <div class="row">
+    <% @restaurantdetails.each do |restaurant| %>
+      <div class="col-md-4">
+        <span class="restaurant_name"><%= restaurant %></span>
+        <br>
+        <br>
+      </div>
+    <%end %>
+  </div>
+</div>
+<%= render 'layouts/footer' %>

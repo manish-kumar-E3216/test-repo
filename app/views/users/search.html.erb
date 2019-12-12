@@ -1,0 +1,24 @@
+<%= render 'layouts/header' %>
+<div class="content_container">
+  <div class="search_meta">
+    <div>
+      <span>"<%= params[:search] %>"</span>
+    </div>
+    <div>
+      <span><%= @restaurants.count %> Restaurants</span>
+    </div>
+  </div>
+  <br>
+  <br>
+  <div class="row">
+    <% @restaurants.each do |restaurant| %>
+      <div class="col-md-4">
+        <%= image_tag("hotels/hotelimage.jpeg", width: '500px', height: '250px') %>
+        <span class="restaurant_name"><%= restaurant["restaurant"]["name"] %></span>
+        <br>
+        <br>
+      </div>
+    <%end %>
+  </div>
+</div>
+<%= render 'layouts/footer' %>
