@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id:
+  date: 2019-12-04
+  cityinfo_id:
+  address: MyString
+  comments: MyString
+  cost: 
+
+two:
+  user_id:
+  date: 2019-12-04
+  cityinfo_id:
+  address: MyString
+  comments: MyString
+  cost: 

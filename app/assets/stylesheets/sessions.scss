@@ -1,0 +1,30 @@
+// Place all the styles related to the sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+@import "std_colors";
+@import "std_fonts";
+
+
+.checkbox {
+  margin-left: 20px;
+  span {
+    font-weight: normal;
+  }
+}
+
+.login_template{
+  font-family: $font-arial-family;
+
+}
+
+.content
+{
+  font-size: 1.5em;
+}
+
+.eats{
+  color:$color-green;
+}
+

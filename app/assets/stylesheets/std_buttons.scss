@@ -1,0 +1,18 @@
+@import "std_colors";
+
+@mixin std-button{
+  background-color: $color-green;
+  border: 1px solid black;
+  border-radius:3px;
+  min-height: 30px;
+  text-align: center;
+}
+.button
+{
+  @include std-button;
+}
+
+.link
+{
+  color: $color-green;
+}

@@ -1,0 +1,9 @@
+<h1>Happy Eats</h1>
+
+<p>Hi <%= @user.fname %>,</p>
+
+<p>
+  Welcome to the Happy Eats! Click on the link below to activate your account:
+</p>
+
+<%= link_to "Activate", edit_account_activation_url(@user.activation_token, email: @user.email) %>

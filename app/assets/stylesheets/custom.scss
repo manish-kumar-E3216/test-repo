@@ -1,0 +1,183 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+@import "std_colors";
+@import "std_fonts";
+
+//@mixin box_sizing {
+//  -moz-box-sizing:    border-box;
+//  -webkit-box-sizing: border-box;
+//  box-sizing:         border-box;
+//}
+
+/* universal */
+
+body {
+  padding-top: 60px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+}
+
+.center h1 {
+  margin-bottom: 10px;
+}
+
+//
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+///* header */
+.navbar-inverse
+{
+  border-color: white;
+  background-color: white;
+}
+//
+#logo {
+  float: left;
+  font-size: 2.5em;
+  color: green;
+  letter-spacing: -1px;
+  font-weight: bold;
+
+}
+
+#logo:hover {
+  text-decoration: none;
+}
+//
+#signin
+{
+  color:black;
+  text-decoration: none;
+  font-size: 1.5em;
+}
+
+.container{
+  margin-left: 20px;
+  margin-top: 10px;
+  width: 90%;
+}
+
+.search_meta
+{
+  font-size: 1em;
+}
+.restaurant_name
+{
+  display: block;
+  margin-top: 5px;
+  font-size: 1.5em;
+  font-family: $font-arial-family;
+}
+
+.content_container{
+  margin-left: 4%;
+  margin-top: 100px;
+  width: 100%;
+}
+
+.signup_header
+{
+  font-size: $header-font-size;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+#account_menu
+{
+  color:black;
+   background-color: white;
+}
+
+.btn-info {
+  color: green;
+  background-color: white;
+  border-color: black;
+}
+
+.navbar-inverse .navbar-nav > .open > a:hover,
+.navbar-inverse .navbar-nav > .open > a:focus {
+ color: black;
+  background-color: white;
+}
+///* footer */
+.footer {
+  margin-bottom: 0px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: black;
+  background-color: limegreen;
+  min-height: 200px;
+}
+
+.footer_container
+{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.footer_content
+{
+  text-align: center;
+}
+
+.about_content
+{
+  color: black;
+  font-weight: bold;
+}
+
+.footer_logo
+{
+  font-weight:bold;
+  font-size:1.5em;
+  color: white;
+}
+
+.i2
+{
+  list-style: none;
+}
+
+.i3 {
+  padding: 10px;
+  border: 1px solid;
+  margin: 0;
+  font-weight: normal;
+}
+
+.details_content
+{
+  margin-top: 10px;
+  cursor:pointer;
+  a{
+    width:100%;
+    color: black;
+  }
+}
+
+.hotel_header
+{
+  color:black;
+  font-weight: bold;
+}
+
+.cart_details
+{
+  padding-left: 10px;
+}

@@ -1,0 +1,22 @@
+en:
+  models:
+
+  header:
+    sign_in: "Sign in"
+    search_placeholder: "what are you craving?"
+    account: "Account"
+
+  views:
+    sessions:
+      login_error: "Invalid email/password combination"
+
+    accounts:
+      activated: "Account activated!"
+      invalid_activation_link: "Invalid activation link"
+      info_activation: "Please check your email to activate your account."
+
+  footer:
+    about: "About"
+    contact: "Contact"
+    help: "Help"
+

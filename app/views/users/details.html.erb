@@ -1,0 +1,39 @@
+<%= render 'layouts/header' %>
+<div>
+  <div>
+    <%=image_tag("hotels/hotelimage.jpeg",width: '100%', height: '400px' )%>
+  </div>
+  <div class="hotel_header">
+    <span><%=@restaurant[0]["name"]%></span>
+  </div>
+</div>
+<div>
+  <ul class="i2">
+    <% @restaurantdetails.each do |key, value| %>
+    <li>
+      <h2><%=key %></h2>
+      <ul>
+        <div class="row">
+          <div class="details_content">
+            <%value.each do |item| %>
+              <div class="col-md-4 details_content">
+                <%= link_to order_food_items_path(:food_id => item["id"], :restaurant_id=>@restaurant[0]["id"]) do%>
+                  <div class="i3">
+                    <div>
+                      <span><%= item["name"] %></span>
+                    </div>
+                    <div>
+                      <span>$<%= item[:cost] %></span>
+                    </div>
+                  </div>
+                <%end %>
+              </div>
+            <%end %>
+          </div>
+        </div>
+      </ul>
+    </li>
+    <%end %>
+  </ul>
+</div>
+<%= render 'layouts/footer' %>

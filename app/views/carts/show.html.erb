@@ -1,0 +1,31 @@
+<%= render 'layouts/header' %>
+<h2>Cart</h2>
+<ul>
+  <% @cart.order_food_items.each do |order_item| %>
+    <li>Item: <b><%= order_item.food.name %></b> Price: <b><%= number_to_currency(order_item.price) %></b>
+      Quantity: <b><%= order_item.quantity %></b> Total Price:<b> <%= number_to_currency(order_item.total_price) %></b>
+      <ul>
+        <li>
+          <%= link_to "Add one", order_food_item_add_path(:id => order_item), method: :post %>
+          <%= link_to "Reduce one", order_food_item_reduce_path(:id => order_item), method: :post %>
+        </li>
+        <li>
+          <%= link_to "Remove item", order_food_item_path(order_item), method: :delete %>
+        </li>
+      </ul>
+    </li>
+    <br>
+  <% end %>
+</ul>
+<!--<%#= link_to "Proceed to checkout", new_order_path %><br>-->
+
+<%if isCartAvailable? %>
+  <h3>Total price: <%= number_to_currency(@cart.sub_total) %></h3>
+  <%= link_to "Remove all item form cart", cart_path(@current_cart),method: :delete, data: {confirm: "Are you sure?"}%>
+<% else %>
+  <span>Empty cart. Please add some items to cart for ordering.</span>
+<%end %>
+
+<br>
+<br>
+<%= render 'layouts/footer' %>
